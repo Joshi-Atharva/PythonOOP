@@ -18,7 +18,10 @@ class Item:
         return self.price * self.quantity
 
     def apply_discount(self):
-        self.price = self.price * self.pay_rate
+        self.price = self.price * self.pay_rate # this will search for the attribute at the instance level first 
+        # and if it doesn't find it, it will search at class level
+        # but writing Item.pay_rate instead of self.pay_rate, will override this search and access pay_rate attribute at the class level
+    
 
     def __repr__(self):
         return f"Item('{self.name}', {self.price}, {self.quantity})"
