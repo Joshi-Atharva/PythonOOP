@@ -1,4 +1,4 @@
-import csv
+import csv # lib to read csv file
 
 
 class Item:
@@ -25,7 +25,7 @@ class Item:
 
     @classmethod
     def instantiate_from_csv(cls):
-        with open('items.csv', 'r') as f:
+        with open('items.csv', 'r') as f: # context manager
             reader = csv.DictReader(f)
             items = list(reader)
 
@@ -42,7 +42,7 @@ class Item:
         # For i.e: 5.0, 10.0
         if isinstance(num, float):
             # Count out the floats that are point zero
-            return num.is_integer()
+            return num.is_integer() # here is_integer() is an inbuilt method probably
         elif isinstance(num, int):
             return True
         else:
