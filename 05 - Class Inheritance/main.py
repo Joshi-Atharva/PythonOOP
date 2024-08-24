@@ -66,5 +66,13 @@ class Phone(Item):
         self.broken_phones = broken_phones
 
 phone1 = Phone("jscPhonev10", 500, 5, 1)
+'''
+Question: Does creating an instance of a child class create an instance of the parent class?
 
+Answer: It creates a single instance that is both of them at once.
+This instance will hold all the data of the parent and all the data of the child together as a single object.
+It also offers all the methods of the parent and all the methods of the child - if you access it through a reference to the child.
+So it does not create two separate instances. Just one,
+And this means that a reference to the child object can access everything common to both parent and child.
+'''
 print(Item.all)
