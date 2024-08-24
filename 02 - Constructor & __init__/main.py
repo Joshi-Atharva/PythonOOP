@@ -4,7 +4,7 @@ class Item:
         assert price >= 0, f"Price {price} is not greater than or equal to zero!"
         assert quantity >= 0, f"Quantity {quantity} is not greater or equal to zero!"
 
-        # Assign to self object
+        # Assign attributes to self object
         self.name = name
         self.price = price
         self.quantity = quantity
