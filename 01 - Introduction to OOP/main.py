@@ -12,7 +12,8 @@ item1.price = 100
 item1.quantity = 5
 
 # Calling methods from instances of a class:
-print(item1.calculate_total_price(item1.price, item1.quantity))
+print(item1.calculate_total_price(item1.price, item1.quantity)) # since python passes the instance as argument to a method by default,
+# we pass only the additional arguments
 
 # How to create an instance of a class (We could create as much as instances we'd like to)
 item2 = Item()
