@@ -10,7 +10,7 @@ class Item:
         assert quantity >= 0, f"Quantity {quantity} is not greater or equal to zero!"
 
         # Assign to self object
-        self.__name = name
+        self.__name = name # __ before the attribute name signifies private attribute - something that cannot be accessed from instance level
         self.price = price
         self.quantity = quantity
 
@@ -19,8 +19,18 @@ class Item:
 
     @property
     # Property Decorator = Read-Only Attribute
+    # It looks like a function (method) but with the @property decorator before it, it behaves like an attribute with its value as written after return statement
+    # but it will also behave like a function. It'll execute all the statements before the return statement 
     def name(self):
         return self.__name
+
+    # in case you ask what is the need for assigning a property and then using setter if we can update the value from instance level then read the following:
+    '''
+    Setters are methods in object-oriented programming languages that update the value of an object's attribute.
+    They are also known as mutators. Setters can be used to protect data, especially when creating classes. 
+    They can also be used to apply constraints to ensure that the 'new' values assigned to the attributes are 'valid'
+    emphasis on 'new': these constraimts are not enoforced during initial assignment (initialisation/ instantiation)
+    '''
 
     @name.setter
     def name(self, value):
