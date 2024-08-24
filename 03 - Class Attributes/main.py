@@ -23,8 +23,10 @@ class Item:
         # but writing Item.pay_rate instead of self.pay_rate, will override this search and access pay_rate attribute at the class level
     
 
+    # magic method to change the representation of each instance 
     def __repr__(self):
         return f"Item('{self.name}', {self.price}, {self.quantity})"
+        # it's a part of best practices to keep the instance representation similar to the way they are created
 
 item1 = Item("Phone", 100, 1)
 item2 = Item("Laptop", 1000, 3)
@@ -32,4 +34,9 @@ item3 = Item("Cable", 10, 5)
 item4 = Item("Mouse", 50, 5)
 item5 = Item("Keyboard", 75, 5)
 
+# prints the list contaning instance memory addresses (references)
 print(Item.all)
+
+# to print the names of all items
+for instance in Item.all:
+    print(instance.name)
